@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring boot application</title>
+</head>
+<body>
+    <h1>你好!欢迎来到Spring Boot Cloud学习</h1>
+    <div th:switch="${users}">
+    <h2 th:case="null">No users yet!</h2>
+        <div th:case="*">
+            <h2>学习进度表</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Project Name</th>
+                        <th>Maven</th>
+                        <th>DataBase</th>
+                        <th>Assign1</th>
+                        <th>Assign2</th>
+                        <th>Assign3</th>
+                        <th>Assign4</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${users}">
+                    <td th:text="${user.name}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td th:text="${user.projectname}"></td>
+                    <td th:text="${user.mavenProcess}"></td>
+                    <td th:text="${user.databaseProcess}"></td>
+                    <td th:text="${user.assign1}"></td>
+                    <td th:text="${user.assign2}"></td>
+                    <td th:text="${user.assign3}"></td>
+                    <td th:text="${user.assign4}"></td>
+                    <td><a th:href="@{/update/{id}(id=${user.id})}">Edit</a></td>
+                    <td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>      
+    <p><a href="/signup">Add a new user</a></p>
+</div>
+</body>
+</html>

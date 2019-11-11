@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring boot application</title>
+</head>
+<body>
+    <h1>Ops!There is an error occurred!</h1>
+    <div>
+    	<h2>ERROR!</h2>
+    	<table>
+    		<thead>
+    			<tr>
+    				<th>Error Count</th>
+    				<th>Error Description</th>
+    				<th>Error Code</th>
+    				<th>Error Message</th>
+    				<th>Error Field</th>
+    				<th>Error Object</th>
+    			</tr>
+    		</thead>
+    		<tbody>
+                <tr th:each="errorinfo : ${errorinfo}">
+                    <td th:text="${errorinfo.errorCount}"></td>
+                    <td th:text="${errorinfo.errorDescription}"></td>
+                    <td th:text="${errorinfo.errorCode}"></td>
+                    <td th:text="${errorinfo.errorMessage}"></td>
+                    <td th:text="${errorinfo.errorField}"></td>
+                    <td th:text="${errorinfo.errorObjectName}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>      
+    <p><a href="/">返回首页</a></p>
+</body>
+</html>
