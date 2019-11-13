@@ -41,7 +41,7 @@ public class UserController {
 			errorInfo.setErrorField(result.getFieldError().getField());
 			errorInfo.setErrorObjectName(result.getFieldError().getObjectName());
 			
-			errorInfo.setErrorDescription("error occurred in adduser");
+			errorInfo.setErrorDescription("error occurred in adduser part");
 			model.addAttribute("errorinfo", errorInfo);
 			return "error-shown";
 		}
